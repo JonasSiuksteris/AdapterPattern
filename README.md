@@ -1,1 +1,3 @@
 # AdapterPattern
+
+Šis dizaino modelis dažniausiai taikomas, kai jau turime programą ir ją norime perdaryti. Šioje programoje turime dvi klases kurios gauna simbolių eilutę iš dviejų skirtingų šaltinių, viena iš failo, kita iš API. Jas jungia bendras Interface, turintis teksto gavimo metodą. Jį implementuoja abu adapteriai sukurdami klasių objektus ir kviesdamos jų metodą. Šis dizaino modelis taip pat leidžia plėsti programą efektyviau, taip pat padeda išlaikyti SOLID principus. Taip pat galime sukurti service, kuris naudotų sukurtą interface, tada servicui reiktų paduoti naują klasę, kuri implementuoja adapterio metodą ir taip kodą padarytume dar labiau atsietą.
