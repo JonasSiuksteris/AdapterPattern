@@ -2,7 +2,7 @@
 
 namespace AdapterPattern
 {
-    public interface IStringSourceAdapter
+    public interface IStringSource
     {
         public Task<string> GetString();
     }

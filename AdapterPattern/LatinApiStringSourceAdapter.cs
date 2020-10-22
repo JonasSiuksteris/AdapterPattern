@@ -14,9 +14,14 @@ namespace AdapterPattern
         }
     }
 
-    public class LatinApiStringSourceAdapter : IStringSourceAdapter
+    public class LatinApiStringSourceAdapter : IStringSource
     {
-        private readonly LatinApi _latinApi = new LatinApi();
+        private readonly LatinApi _latinApi;
+
+        public LatinApiStringSourceAdapter(LatinApi latinApi)
+        {
+            _latinApi = latinApi;
+        }
 
         public async Task<string> GetString()
         { 

@@ -5,15 +5,17 @@ namespace AdapterPattern
 {
     internal class Program
     {
-        private static async Task Main()
+        private static void Main()
         {
-            var test = new LatinApiStringSourceAdapter();
+            var consoleWriter = new ConsoleWriter();
 
-            Console.WriteLine(await test.GetString());
+            var test = new LatinApiStringSourceAdapter(new LatinApi());
 
-            var test2 = new FileStringSourceAdapter("Files/text.txt");
+            consoleWriter.Write(test);
 
-            Console.WriteLine(await test2.GetString());
+            var test2 = new FileStringSourceAdapter(new ReadFromFile(),"Files/text.txt");
+
+            consoleWriter.Write(test2);
 
         }
     }

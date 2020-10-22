@@ -11,14 +11,15 @@ namespace AdapterPattern
         }
     }
 
-    public class FileStringSourceAdapter : IStringSourceAdapter
+    public class FileStringSourceAdapter : IStringSource
     {
-        private readonly ReadFromFile _readFromFile = new ReadFromFile();
+        private readonly ReadFromFile _readFromFile;
         private readonly string _fileName;
 
-        public FileStringSourceAdapter(
+        public FileStringSourceAdapter(ReadFromFile readFromFile,
             string fileName)
         {
+            _readFromFile = readFromFile;
             _fileName = fileName;
         }
         public async Task<string> GetString()
